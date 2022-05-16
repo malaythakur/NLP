@@ -40,8 +40,8 @@ from nltk.stem.porter import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 
 ps = PorterStemmer()
-
 wordnet = WordNetLemmatizer()
+
 sentences = nltk.sent_tokenize(para)
 corpus = []
 for i in range(len(sentences)):
@@ -53,9 +53,9 @@ for i in range(len(sentences)):
     corpus.append(review)
     
 
-from sklearn.features_extraction.text import CountVectorizer
-cv = CountVectorizer(max_features = 1500)
-
+from sklearn.feature_extraction.text import CountVectorizer #importing 
+cv = CountVectorizer()
+x = cv.fit_transform(corpus).toarray()
 
 """
 for i in range(len(sentences)):
